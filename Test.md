@@ -10,7 +10,7 @@ Use a function to search for elements within an array
 
 | Safe? | Name                     | Purpose                              |
 | :---: | ------------------------ | ------------------------------------ |
-|  ✅   | **[every(fn)](##every)** | Does every element passes a test?    |
+|  ✅   | **[every(fn)](#every)** | Does every element passes a test?    |
 |  ✅   | **filter(fn)**           | Array with matching elements         |
 |  ✅   | **find(fn)**             | Get first matching element           |
 |  ✅   | **findIndex(fn)**        | Get index for first matching element |
@@ -59,7 +59,7 @@ These functions help you get an array with different elements. Warning: Most of 
 
 | Safe? | Name                                     | Purpose                                                |
 | :---: | ---------------------------------------- | ------------------------------------------------------ |
-|  ✅   | **[concat(elements)](##concat)**         | Append arrays or elements                              |
+|  ✅   | **[concat(elements)](#concat)**         | Append arrays or elements                              |
 |  ❌   | **pop()**                                | Removes the last element from an array                 |
 |  ❌   | **push(elements)**                       | Adds one or more elements to the end of an array       |
 |  ❌   | **shift()**                              | Removes the first element from an array                |
