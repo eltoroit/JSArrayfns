@@ -59,7 +59,7 @@ These functions help you get an array with different elements. Warning: Most of 
 
 | Safe? | Name                                     | Purpose                                                |
 | :---: | ---------------------------------------- | ------------------------------------------------------ |
-|  ✅   | **concat(elements)** [x][#concat]                    | Append arrays or elements                              |
+|  ✅   | **[concat(elements)](#concat)**          | Append arrays or elements                              |
 |  ❌   | **pop()**                                | Removes the last element from an array                 |
 |  ❌   | **push(elements)**                       | Adds one or more elements to the end of an array       |
 |  ❌   | **shift()**                              | Removes the first element from an array                |
