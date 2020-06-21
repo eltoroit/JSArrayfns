@@ -4,7 +4,7 @@ As you may be aware, JavaScript has a large number of functions to work with arr
 
 Before we go to the emoji samples, let's summarize the functions by their main intention.
 
-## Use Search Functions [x][#concat]
+## Use Search Functions
 
 Use a function to search for elements within an array
 
@@ -59,7 +59,7 @@ These functions help you get an array with different elements. Warning: Most of 
 
 | Safe? | Name                                     | Purpose                                                |
 | :---: | ---------------------------------------- | ------------------------------------------------------ |
-|  ✅   | **concat(elements)**                     | Append arrays or elements                              |
+|  ✅   | **concat(elements)** [x][#concat]                    | Append arrays or elements                              |
 |  ❌   | **pop()**                                | Removes the last element from an array                 |
 |  ❌   | **push(elements)**                       | Adds one or more elements to the end of an array       |
 |  ❌   | **shift()**                              | Removes the first element from an array                |
@@ -89,7 +89,7 @@ Other functions
 
 # Syntax and samples
 
-## concat
+# Concat
 
 |         |                                                                     |
 | ------- | ------------------------------------------------------------------- |
