@@ -91,6 +91,28 @@ Other functions
 
 # Syntax and samples
 
+## Helper functions
+
+```JavaScript
+function isAnimal(emoji) {
+    return '🐄🐔'.includes(emoji.trim());
+}
+function cook(emoji) {
+    let cooked = "";
+    switch (emoji.trim()) {
+        case '🐄': { cooked = '🍔'; break; }
+        case '🌽': { cooked = '🍿'; break; }
+        case '🥔': { cooked = '🍟'; break; }
+        case '🐔': { cooked = '🍗'; break; }
+        default: {
+            alert(`I do not know how to cook ${emoji.trim()}`);
+            break;
+        }
+    }
+    return ` ${cooked} `;
+}
+```
+
 ## Concat
 
 |         |                                                                     |
@@ -113,8 +135,6 @@ let output = array1.concat(array2);
 console.log(output); // [ ' 🐄 ', ' 🥔 ', ' 🐔 ', ' 🌽 ', ' 🍔 ', ' 🍟 ']
 ```
 
-[Back to the top](#add,-change-and-remove-elements)
-
 ## Every
 
 |         |                                                                                                        |
@@ -130,13 +150,10 @@ console.log(output); // false
 ```
 
 ```JavaScript
-let isAnimal = {' 🐄 ':true, ' 🌽 ':false, ' 🐔 ':true};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.every(currentValue => isAnimal[currentValue]);
+let output = array1.every(currentValue => isAnimal(currentValue));
 console.log(output); // false
 ```
-
-[Back to the top](#use-search-functions)
 
 ## Filter
 
@@ -153,13 +170,10 @@ console.log(output); // [ 30, 39, 29 ]
 ```
 
 ```JavaScript
-let isAnimal = {' 🐄 ':true, ' 🌽 ':false, ' 🐔 ':true};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.filter(currentValue => isAnimal[currentValue]);
+let output = array1.filter(currentValue => isAnimal(currentValue));
 console.log(output); // [ ' 🐄 ', ' 🐔 ' ]
 ```
-
-[Back to the top](#use-search-functions)
 
 ## Find
 
@@ -176,13 +190,10 @@ console.log(output); // 'Banana'
 ```
 
 ```JavaScript
-let isAnimal = {' 🐄 ':true, ' 🌽 ':false, ' 🐔 ':true};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.find(currentValue => isAnimal[currentValue]);
+let output = array1.find(currentValue => isAnimal(currentValue));
 console.log(output); // ' 🐄 '
 ```
-
-[Back to the top](#use-search-functions)
 
 ## FindIndex
 
@@ -199,13 +210,10 @@ console.log(output); // 3
 ```
 
 ```JavaScript
-let isAnimal = {' 🐄 ':true, ' 🌽 ':false, ' 🐔 ':true};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.findIndex(currentValue => isAnimal[currentValue]);
+let output = array1.findIndex(currentValue => isAnimal(currentValue));
 console.log(output); // 0
 ```
-
-[Back to the top](#use-search-functions)
 
 ## ForEach
 
@@ -222,17 +230,11 @@ console.log(output); // undefined
 ```
 
 ```JavaScript
-let cooked = [];
-let foodFrom = {' 🐄 ': ' 🍔 ', ' 🌽 ': ' 🍿 ', ' 🥔 ': ' 🍟 ', ' 🐔 ': ' 🍗 '};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.forEach(currentValue => {
-  cooked.push(foodFrom[currentValue]);
+array1.forEach(currentValue => {
+    console.log(currentValue); // 🐄, 🌽, 🐔
 });
-console.log(output); // undefined
-console.log(cooked); // [ ' 🍔 ', ' 🍿 ', ' 🍗 ' ]
 ```
-
-[Back to the top](#process-elements)
 
 ## Includes
 
@@ -254,8 +256,6 @@ let output = array1.includes(' 🐔 ');
 console.log(output); // true
 ```
 
-[Back to the top](#find-elements)
-
 ## IndexOf
 
 |         |                                                                                                        |
@@ -275,8 +275,6 @@ let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
 let output = array1.indexOf(' 🐔 ');
 console.log(output); // 2
 ```
-
-[Back to the top](#find-elements)
 
 ## Join
 
@@ -298,8 +296,6 @@ let output = array1.join(' => ');
 console.log(output); // ' 🐄  =>  🍔  =>  💩 '
 ```
 
-[Back to the top](#aggregate)
-
 ## LastIndexOf
 
 |         |                                                                                                       |
@@ -320,8 +316,6 @@ let output = array1.lastIndexOf(' 🐔 ');
 console.log(output); // 3
 ```
 
-[Back to the top](#find-elements)
-
 ## Map
 
 |         |                                                                                                                     |
@@ -339,13 +333,10 @@ console.log(output); // [ 1, 2, 3, 4 ]
 ```
 
 ```JavaScript
-let foodFrom = {' 🐄 ': ' 🍔 ', ' 🌽 ': ' 🍿 ', ' 🥔 ': ' 🍟 ', ' 🐔 ': ' 🍗 '};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.map(currentValue => foodFrom[currentValue]);
+let output = array1.map(currentValue => cook(currentValue));
 console.log(output); // [ ' 🍔 ', ' 🍿 ', ' 🍗 ' ]
 ```
-
-[Back to the top](#process-elements)
 
 ## Pop
 
@@ -367,8 +358,6 @@ let output = array1.pop();
 console.log(output); // ' 🐔 '
 ```
 
-[Back to the top](#add,-change-and-remove-elements)
-
 ## Push
 
 |         |                                                                                       |
@@ -389,8 +378,6 @@ let output = array1.push(' 🐔 ');
 console.log(output); // 3
 console.log(array1); // [ ' 🐄 ', ' 🌽 ', ' 🐔 ' ]
 ```
-
-[Back to the top](#add,-change-and-remove-elements)
 
 ## Reduce
 
@@ -414,8 +401,6 @@ let output = array1.reduce((accumulator, currentValue) => ' 💰 ');
 console.log(output); // ' 💰 '
 ```
 
-[Back to the top](#aggregate)
-
 ## Reverse
 
 |         |                   |
@@ -437,8 +422,6 @@ let array2 = array1.reverse();
 console.log('original:', array1); // 'original:' [ ' 🐔 ', ' 🌽 ', ' 🐄 ' ]
 console.log('reversed:', array2); // 'reversed:' [ ' 🐔 ', ' 🌽 ', ' 🐄 ' ]
 ```
-
-[Back to the top](#change-elements-order)
 
 ## Shift
 
@@ -462,8 +445,6 @@ console.log(array1); // [ ' 🌽 ', ' 🐔 ' ]
 console.log(output); // ' 🐄 '
 ```
 
-[Back to the top](#add,-change-and-remove-elements)
-
 ## Slice
 
 |         |                                                                                                  |
@@ -484,8 +465,6 @@ let output = array1.slice(1,2);
 console.log(output); // [ ' 🌽 ' ]
 ```
 
-[Back to the top](#add,-change-and-remove-elements)
-
 ## Some
 
 |         |                                                                                                      |
@@ -501,13 +480,10 @@ console.log(output); // true
 ```
 
 ```JavaScript
-let isAnimal = {' 🐄 ':true, ' 🌽 ':false, ' 🐔 ':true};
 let array1 = [' 🐄 ', ' 🌽 ', ' 🐔 '];
-let output = array1.some(currentValue => isAnimal[currentValue]);
+let output = array1.some(currentValue => isAnimal(currentValue));
 console.log(output); // true
 ```
-
-[Back to the top](#use-search-functions)
 
 ## Sort
 
@@ -537,8 +513,6 @@ let array1 = [' 🥚 ', ' 🐔 '];
 let whatWasFirst = array1.sort();
 console.log(whatWasFirst); // [ ' 🐔 ', ' 🥚 ' ]
 ```
-
-[Back to the top](#change-elements-order)
 
 ## Splice
 
@@ -593,8 +567,6 @@ console.log(array1); // [ ' 🐄 ', ' 🐶 ', ' 🐔 ' ]
 console.log(output); // [ ' 🌽 ' ]
 ```
 
-[Back to the top](#add,-change-and-remove-elements)
-
 ## Unshift
 
 |         |                                                                                                |
@@ -616,5 +588,3 @@ let output = array1.unshift(' 🐄 ', ' 🥔 ', ' 🐔 ');
 console.log(array1); // [ ' 🐄 ', ' 🥔 ', ' 🐔 ', ' 🌽 ', ' 🍔 ', ' 🍟 ']
 console.log(output); // 6
 ```
-
-[Back to the top](#add,-change-and-remove-elements)
