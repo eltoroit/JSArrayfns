@@ -59,15 +59,19 @@ Get a single value from all the elements
 
 These functions help you get an array with different elements. Warning: Most of these functions alter the original array!
 
+<p align="center">
+    <img src="Files/SlideModifiers.png?raw=true" width="40%"/>
+</p>
+
 | Safe? | Name                                                | Purpose                                                |
 | :---: | --------------------------------------------------- | ------------------------------------------------------ |
 |  ✅   | **[concat(elements)](#concat)**                     | Append arrays or elements                              |
 |  ❌   | **[pop()](#pop)**                                   | Removes the last element from an array                 |
 |  ❌   | **[push(elements)](#push)**                         | Adds one or more elements to the end of an array       |
 |  ❌   | **[shift()](#shift)**                               | Removes the first element from an array                |
+|  ❌   | **[unshift(elements)](#unshift)**                   | Adds one or more elements to the beginning of an array |
 |  ✅   | **[slice(start, end)](#slice)**                     | Returns a shallow copy of a portion of an array        |
 |  ❌   | **[splice(start, deleteCount, elements)](#splice)** | Change the contents of an array                        |
-|  ❌   | **[unshift(elements)](#unshift)**                   | Adds one or more elements to the beginning of an array |
 
 Functions that **add** values
 
@@ -86,8 +90,8 @@ Functions that **remove** values
 
 Other functions
 
--   The **[splice(start, deleteCount, values)](#splice)** function adds and removes elements, but be very careful because it's not safe (❌), it will make changes to your arrays!
--   The **[slice(start, end)](#slice)** function gives you a new arraywith a subset (start to end-1) of the elements but it's safe (✅) because does not make changes to your array.
+- The **[splice(start, deleteCount, values)](#splice)** function adds and removes elements, but be very careful because it's not safe (❌), it will make changes to your arrays!
+- The **[slice(start, end)](#slice)** function gives you a new arraywith a subset (start to end-1) of the elements but it's safe (✅) because does not make changes to your array.
 
 # Syntax and samples
 
@@ -526,23 +530,23 @@ console.log(whatWasFirst); // [ ' 🐔 ', ' 🥚 ' ]
 
 The changes to the array include:
 
--   Removing elements
--   Replacing existing elements
--   Adding new elements in place.
+- Removing elements
+- Replacing existing elements
+- Adding new elements in place.
 
 The parameters for this function are:
 
--   Start
-    -   The index at which to start changing the array
-    -   `start > array.length`: No elements will be deleted but elements could be appended to the array
-    -   `start < 0`: Begins at the end (array.length - n)
-    -   `array.length + start < 0`: begin from index 0
--   deleteCount
-    -   An integer indicating the number of elements in the array to remove from start
-    -   If _deleteCount_ is omitted or id `deleteCount > array.length - start` then all the elements from start to the end of the array will be deleted
-    -   `deleteCount = 0` (or negative): no elements are removed
--   item1, item2, …
-    -   Elements to add to the array, beginning from the `start` position
+- Start
+  - The index at which to start changing the array
+  - `start > array.length`: No elements will be deleted but elements could be appended to the array
+  - `start < 0`: Begins at the end (array.length - n)
+  - `array.length + start < 0`: begin from index 0
+- deleteCount
+  - An integer indicating the number of elements in the array to remove from start
+  - If _deleteCount_ is omitted or id `deleteCount > array.length - start` then all the elements from start to the end of the array will be deleted
+  - `deleteCount = 0` (or negative): no elements are removed
+- item1, item2, …
+  - Elements to add to the array, beginning from the `start` position
 
 This function returs an array containing the deleted elements
 
