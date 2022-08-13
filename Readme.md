@@ -60,7 +60,7 @@ Get a single value from all the elements
 These functions help you get an array with different elements. Warning: Most of these functions alter the original array!
 
 <p align="center">
-    <img src="Files/SlideModifiers.png?raw=true" width="40%"/>
+    <img src="Files/SlideModifiers.png?raw=true"/>
 </p>
 
 | Safe? | Name                                                | Purpose                                                |
